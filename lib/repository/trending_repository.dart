@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 
 class TrendingRepository{
   var queryPram = {
-    'api_key' : '4a1a1f3fea356867577bbf4461fbc1dc'
+    'api_key' : ''
   };
   Future<List<Movie>?> loadMovies() async{
     var url =
