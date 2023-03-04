@@ -4,10 +4,10 @@ import 'package:http/http.dart' as http;
 
 class SearchRepository {
   // var queryPram = {
-  //   'api_key' : '4a1a1f3fea356867577bbf4461fbc1dc',
+  //   'api_key' : '',
   //   'query' : 'avatar'
   // };
-  final String apiKey = '4a1a1f3fea356867577bbf4461fbc1dc';
+  final String apiKey = '';
 
   Future<List<Search>?> loadSearch(String query) async {
     // var url =
