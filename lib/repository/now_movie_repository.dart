@@ -3,7 +3,7 @@ import 'package:simple_movie/model/movie.dart';
 import 'package:http/http.dart' as http;
 
 class MovieRepository {
-  var queryPram = {'api_key': '4a1a1f3fea356867577bbf4461fbc1dc'};
+  var queryPram = {'api_key': ''};
   Future<List<Movie>?> loadMovies() async {
     var url =
         Uri.https('api.themoviedb.org', '/3/movie/now_playing', queryPram);

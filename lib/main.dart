@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:simple_movie/controller/now_movie_provider.dart';
-import 'package:simple_movie/controller/search_provider.dart';
-import 'package:simple_movie/controller/trending_provider.dart';
-import 'package:simple_movie/controller/youtube_video_provider.dart';
-import 'package:simple_movie/ui/home_screen.dart';
+import 'package:simple_movie/viewmodel/now_movie_provider.dart';
+import 'package:simple_movie/viewmodel/search_provider.dart';
+import 'package:simple_movie/viewmodel/trending_provider.dart';
+import 'package:simple_movie/viewmodel/youtube_video_provider.dart';
+import 'package:simple_movie/view/home_screen.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(

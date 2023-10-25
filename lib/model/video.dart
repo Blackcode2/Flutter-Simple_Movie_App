@@ -1,52 +1,143 @@
 class Video {
-  String? iso6391;
-  String? iso31661;
-  String? name;
-  String? key;
-  String? site;
-  int? size;
-  String? type;
-  bool? official;
-  String? publishedAt;
-  String? id;
+  int? _id;
+  List<Results>? _results;
 
-  Video(
-      {this.iso6391,
-      this.iso31661,
-      this.name,
-      this.key,
-      this.site,
-      this.size,
-      this.type,
-      this.official,
-      this.publishedAt,
-      this.id});
+  Video({int? id, List<Results>? results}) {
+    if (id != null) {
+      _id = id;
+    }
+    if (results != null) {
+      _results = results;
+    }
+  }
+
+  int? get id => _id;
+  set id(int? id) => _id = id;
+  List<Results>? get results => _results;
+  set results(List<Results>? results) => _results = results;
 
   Video.fromJson(Map<String, dynamic> json) {
-    // iso6391 = json['iso_639_1'];
-    // iso31661 = json['iso_3166_1'];
-    // name = json['name'];
-    key = json['key'];
-    // site = json['site'];
-    // size = json['size'];
-    // type = json['type'];
-    // official = json['official'];
-    // publishedAt = json['published_at'];
-    // id = json['id'];
+    _id = json['id'];
+    if (json['results'] != null) {
+      _results = <Results>[];
+      json['results'].forEach((v) {
+        _results!.add(Results.fromJson(v));
+      });
+    }
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
-    // data['iso_639_1'] = this.iso6391;
-    // data['iso_3166_1'] = this.iso31661;
-    // data['name'] = this.name;
-    data['key'] = key;
-    // data['site'] = this.site;
-    // data['size'] = this.size;
-    // data['type'] = this.type;
-    // data['official'] = this.official;
-    // data['published_at'] = this.publishedAt;
-    // data['id'] = this.id;
+    data['id'] = _id;
+    if (_results != null) {
+      data['results'] = _results!.map((v) => v.toJson()).toList();
+    }
+    return data;
+  }
+}
+
+class Results {
+  // String? _iso6391;
+  // String? _iso31661;
+  // String? _name;
+  String? _key;
+  // String? _site;
+  // int? _size;
+  // String? _type;
+  // bool? _official;
+  // String? _publishedAt;
+  // String? _id;
+
+  Results({
+    //   String? iso6391,
+    // String? iso31661,
+    // String? name,
+    String? key,
+    // String? site,
+    // int? size,
+    // String? type,
+    // bool? official,
+    // String? publishedAt,
+    // String? id
+  }) {
+    // if (iso6391 != null) {
+    //   this._iso6391 = iso6391;
+    // }
+    // if (iso31661 != null) {
+    //   this._iso31661 = iso31661;
+    // }
+    // if (name != null) {
+    //   this._name = name;
+    // }
+    if (key != null) {
+      _key = key;
+    }
+    // if (site != null) {
+    //   this._site = site;
+    // }
+    // if (size != null) {
+    //   this._size = size;
+    // }
+    // if (type != null) {
+    //   this._type = type;
+    // }
+    // if (official != null) {
+    //   this._official = official;
+    // }
+    // if (publishedAt != null) {
+    //   this._publishedAt = publishedAt;
+    // }
+    // if (id != null) {
+    //   this._id = id;
+    // }
+  }
+
+  // String? get iso6391 => _iso6391;
+  // set iso6391(String? iso6391) => _iso6391 = iso6391;
+  // String? get iso31661 => _iso31661;
+  // set iso31661(String? iso31661) => _iso31661 = iso31661;
+  // String? get name => _name;
+  // set name(String? name) => _name = name;
+  String? get key => _key;
+  set key(String? key) => _key = key;
+  // String? get site => _site;
+  // set site(String? site) => _site = site;
+  // int? get size => _size;
+  // set size(int? size) => _size = size;
+  // String? get type => _type;
+  // set type(String? type) => _type = type;
+  // bool? get official => _official;
+  // set official(bool? official) => _official = official;
+  // String? get publishedAt => _publishedAt;
+  // set publishedAt(String? publishedAt) => _publishedAt = publishedAt;
+  // String? get id => _id;
+  // set id(String? id) => _id = id;
+
+  Results.fromJson(Map<String, dynamic> json) {
+    // _iso6391 = json['iso_639_1'];
+    // _iso31661 = json['iso_3166_1'];
+    // _name = json['name'];
+    _key = json['key'];
+    // _site = json['site'];
+    // _size = json['size'];
+    // _type = json['type'];
+    // _official = json['official'];
+    // _publishedAt = json['published_at'];
+    // _id = json['id'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = <String, dynamic>{};
+    // data['iso_639_1'] = this._iso6391;
+    // data['iso_3166_1'] = this._iso31661;
+    // data['name'] = this._name;
+    data['key'] = _key;
+    // data['site'] = this._site;
+    // data['size'] = this._size;
+    // data['type'] = this._type;
+    // data['official'] = this._official;
+    // data['published_at'] = this._publishedAt;
+    // data['id'] = this._id;
     return data;
   }
 }
